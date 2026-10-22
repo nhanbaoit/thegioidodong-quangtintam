@@ -1,0 +1,990 @@
+/* ==========================================================================
+   CSS BỔ SUNG CHO CÁC KHỐI THEO HÌNH 1 VÀ CÁC TRANG CẤP 2, CẤP 3, LIÊN HỆ, SẢN PHẨM ĐÃ XEM
+   Đồ Đồng Quang Tín Tâm
+   ========================================================================== */
+
+/* ------------------ FLOATING ACTION BUTTONS (LEFT SIDE - HÌNH 1) ------------------ */
+.floating-actions-left {
+  position: fixed;
+  left: 20px;
+  bottom: 80px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.float-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.float-btn--phone {
+  background: #d82b1e;
+  animation: pulsePhone 2s infinite ease-out;
+}
+
+.float-btn--zalo {
+  background: #0068ff;
+  animation: pulseZalo 2s infinite ease-out;
+}
+
+.float-btn--messenger {
+  background: #9b28b0;
+  animation: pulseMessenger 2s infinite ease-out;
+}
+
+@keyframes pulsePhone {
+  0% { box-shadow: 0 0 0 0 rgba(216, 43, 30, 0.75); }
+  65% { box-shadow: 0 0 0 16px rgba(216, 43, 30, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(216, 43, 30, 0); }
+}
+
+@keyframes pulseZalo {
+  0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.75); }
+  65% { box-shadow: 0 0 0 16px rgba(0, 104, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+}
+
+@keyframes pulseMessenger {
+  0% { box-shadow: 0 0 0 0 rgba(155, 40, 176, 0.75); }
+  65% { box-shadow: 0 0 0 16px rgba(155, 40, 176, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(155, 40, 176, 0); }
+}
+
+/* ------------------ BACK TO TOP BUTTON ------------------ */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1e1713;
+  color: #ffdd3b;
+  border: 2px solid #c59b27;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #c88614;
+  color: #ffffff;
+  border-color: #c88614;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 28px rgba(243, 97, 0, 0.5);
+}
+
+.back-to-top svg {
+  transition: transform 0.25s ease;
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-3px);
+}
+
+/* ------------------ SECTION 2: 8 DANH MỤC TRÒN / BO GÓC (HÌNH 1) ------------------ */
+.cat-quick-section {
+  padding: 30px 0;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cat-quick-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cat-quick-header h2 {
+  font-family: 'Playfair Display', 'Playfair Display', serif;
+  font-size: 22px;
+  color: #5c2810;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.cat-quick-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #c88614;
+}
+
+.cat-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
+}
+
+.cat-quick-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  background: #faf8f5;
+  border: 1px solid #eee5dc;
+  border-radius: 8px;
+  padding: 16px 8px;
+  transition: all 0.3s ease;
+}
+
+.cat-quick-item:hover {
+  transform: translateY(-5px);
+  border-color: #c88614;
+  box-shadow: 0 8px 18px rgba(243, 97, 0, 0.12);
+  background: #fff;
+}
+
+.cat-quick-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #dfc29e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.06);
+}
+
+.cat-quick-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.cat-quick-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cat-quick-item:hover .cat-quick-icon img {
+  transform: scale(1.1);
+}
+
+.cat-quick-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.35;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-quick-count {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* ------------------ SECTION 3: QUÀ TẶNG MẠ VÀNG (HÌNH 1) ------------------ */
+.section-gold-gifts {
+  padding: 40px 0;
+  background: #fdfdfd;
+}
+
+.split-promo-banner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.promo-left-card {
+  background: linear-gradient(145deg, #0f3d42, #185a60);
+  border-radius: 8px;
+  padding: 32px 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(15, 61, 66, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-left-card::before {
+  content: '❖';
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  font-size: 140px;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.promo-left-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #ffdd3b;
+  text-transform: uppercase;
+}
+
+.promo-left-card p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  margin-top: 10px;
+}
+
+.promo-arrows {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.promo-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.promo-arrow-btn:hover {
+  background: #ffdd3b;
+  color: #0f3d42;
+}
+
+.promo-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ------------------ SECTION 4: ĐÚC ĐỒNG YÊU CẦU (HÌNH 1) ------------------ */
+.section-custom-casting {
+  padding: 40px 0;
+  background: #fff;
+}
+
+.casting-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #5c2810;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.casting-header-bar h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #5c2810;
+  text-transform: uppercase;
+}
+
+.casting-tab-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.casting-tab-btn {
+  padding: 8px 18px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.casting-tab-btn.active, .casting-tab-btn:hover {
+  background: #a31d1d;
+  color: #fff;
+  border-color: #a31d1d;
+}
+
+.casting-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.btn-center-wrap {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.btn-view-all-dark {
+  display: inline-block;
+  background: #8b1818;
+  color: #fff;
+  padding: 10px 32px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.btn-view-all-dark:hover {
+  background: #a62020;
+  color: #fff;
+}
+
+/* ------------------ SECTION 5: ĐỒ THỜ CÚNG & CÁC HÀNG SẢN PHẨM (HÌNH 1) ------------------ */
+.section-product-row {
+  padding: 36px 0;
+  background: #fff;
+  border-top: 1px solid #f2ede7;
+}
+
+.product-row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-row-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-row-title-wrap h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #5c2810;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  padding-left: 12px;
+}
+
+.product-row-title-wrap h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  background: #c88614;
+}
+
+.row-nav-arrows {
+  display: flex;
+  gap: 6px;
+}
+
+.row-arrow-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.row-arrow-btn:hover {
+  background: #c88614;
+  color: #fff;
+  border-color: #c88614;
+}
+
+.btn-view-all-small {
+  padding: 6px 14px;
+  border: 1px solid #a31d1d;
+  background: #a31d1d;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-view-all-small:hover {
+  background: #831515;
+}
+
+/* ------------------ SECTION 6: ASYMMETRIC 4-BANNER SHOWCASE (HÌNH 1) ------------------ */
+.section-asymmetric-banners {
+  padding: 30px 0;
+  background: #f9f7f4;
+}
+
+.asymmetric-banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.banner-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  min-height: 260px;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  color: #fff;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%);
+  transition: background 0.3s ease;
+}
+
+.banner-item:hover::before {
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.15) 100%);
+}
+
+.banner-item--large {
+  grid-row: span 2;
+  min-height: 380px;
+  background: #2a1f14;
+}
+
+.banner-item-right-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+
+.banner-item-split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.banner-content-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content-inner h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #ffdd3b;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.banner-item--large .banner-content-inner h3 {
+  font-size: 26px;
+}
+
+.banner-content-inner p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ------------------ TESTIMONIALS (KHÁCH HÀNG NÓI VỀ CHÚNG TÔI - HÌNH 1) ------------------ */
+.section-testimonials-dark {
+  padding: 50px 0;
+  background: linear-gradient(135deg, #181512, #261f18);
+  color: #fff;
+  position: relative;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.testimonials-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #ffdd3b;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.testimonials-header p {
+  font-size: 15px;
+  color: #c5b49d;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.testimonial-quote {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #e5ded4;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #c88614;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.author-info h4 {
+  font-size: 15px;
+  color: #ffdd3b;
+  margin-bottom: 2px;
+}
+
+.author-info span {
+  font-size: 12.5px;
+  color: #bfaea0;
+}
+
+/* ------------------ CÁC TRANG CẤP 2 VÀ CẤP 3 (SẢN PHẨM, DỊCH VỤ, CÔNG TRÌNH) ------------------ */
+.page-breadcrumb {
+  background: #f5f2ec;
+  padding: 12px 0;
+  font-size: 13.5px;
+  border-bottom: 1px solid #e8e0d4;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-list a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumb-list a:hover {
+  color: #c88614;
+}
+
+.breadcrumb-sep {
+  color: #aaa;
+  font-size: 11px;
+}
+
+.breadcrumb-current {
+  color: #5c2810;
+  font-weight: 600;
+}
+
+.page-hero-banner {
+  background: linear-gradient(rgba(26, 22, 20, 0.8), rgba(26, 22, 20, 0.85)), #382415;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 3px solid #c88614;
+}
+
+.page-hero-banner h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #ffdd3b;
+  margin-bottom: 10px;
+}
+
+.page-hero-banner p {
+  font-size: 16px;
+  color: #d1c5b8;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Lưới danh mục con cấp 2 */
+.category-grid-l2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 36px 0;
+}
+
+.cat-card-l2 {
+  background: #fff;
+  border: 1px solid #e8decb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-card-l2:hover {
+  transform: translateY(-5px);
+  border-color: #c88614;
+  box-shadow: 0 10px 24px rgba(243, 97, 0, 0.15);
+}
+
+.cat-card-l2__img {
+  height: 180px;
+  background: #201a14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cat-card-l2__img svg {
+  width: 90px;
+  height: 90px;
+}
+
+.cat-card-l2__body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cat-card-l2__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #5c2810;
+  margin-bottom: 8px;
+}
+
+.cat-card-l2__desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.cat-card-l2__btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fbf7f2;
+  border: 1px solid #dfc7ab;
+  color: #a31d1d;
+  font-weight: 600;
+  font-size: 13.5px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cat-card-l2__btn:hover {
+  background: #a31d1d;
+  color: #fff;
+  border-color: #a31d1d;
+}
+
+/* ------------------ TRANG LIÊN HỆ (/lien-he) ------------------ */
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  margin: 40px 0;
+}
+
+.contact-info-panel {
+  background: #fdfaf6;
+  border: 1px solid #ebd9c5;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.contact-info-panel h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #5c2810;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #c88614;
+  padding-bottom: 10px;
+}
+
+.contact-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.contact-icon-bubble {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #c88614;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-text-box h4 {
+  font-size: 15px;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.contact-text-box p, .contact-text-box a {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.contact-text-box a:hover {
+  color: #c88614;
+}
+
+.contact-form-panel {
+  background: #fff;
+  border: 1px solid #e5ded5;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-form-panel h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #5c2810;
+  margin-bottom: 18px;
+}
+
+.form-group-field {
+  margin-bottom: 16px;
+}
+
+.form-group-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.form-input-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14.5px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-input-control:focus {
+  border-color: #c88614;
+  outline: none;
+}
+
+.map-wrapper-box {
+  margin: 30px 0 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  height: 420px;
+}
+
+.map-wrapper-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ------------------ TRANG SẢN PHẨM ĐÃ XEM (/san-pham-da-xem) ------------------ */
+.viewed-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #fbf9f6;
+  border: 1px solid #ede4d6;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
+.btn-clear-history {
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-clear-history:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-remove-viewed {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 5;
+  transition: background 0.2s;
+}
+
+.btn-remove-viewed:hover {
+  background: #dc3545;
+}
+
+.viewed-empty-box {
+  text-align: center;
+  padding: 60px 20px;
+  background: #faf8f5;
+  border: 1px dashed #d5c8b5;
+  border-radius: 8px;
+  margin: 40px 0;
+}
+
+.viewed-empty-icon {
+  font-size: 48px;
+  color: #c99738;
+  margin-bottom: 16px;
+}
+
+.viewed-empty-box h3 {
+  font-size: 20px;
+  color: #5c2810;
+  margin-bottom: 8px;
+}
+
+.viewed-empty-box p {
+  font-size: 14.5px;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+/* ------------------ RESPONSIVE BREAKPOINTS ------------------ */
+@media (max-width: 1200px) {
+  .cat-quick-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .casting-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .split-promo-banner {
+    grid-template-columns: 1fr;
+  }
+  .promo-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .asymmetric-banner-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cat-quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .casting-grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .promo-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
